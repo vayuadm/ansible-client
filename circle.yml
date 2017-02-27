@@ -11,6 +11,7 @@ dependencies:
     - docker build -t $IMAGE_NAME .
 deployment:
   continuous:
+    branch: master
     commands:
       # tag image with CircleCI build number
       - docker tag $IMAGE_NAME $IMAGE_NAME:$CIRCLE_BUILD_NUM
