@@ -21,4 +21,4 @@
     - name: "assert kubectl"
       assert:
          that:
-           - "cmd_result.stderr != ''"
+           - "cmd_result.stderr == ''"
