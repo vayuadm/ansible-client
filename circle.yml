@@ -6,12 +6,9 @@ machine:
     - docker
   environment:
     IMAGE_NAME: vayuadm/vayu-ansible-client
-dependencies:
-  override:
-    - docker build -t $IMAGE_NAME .
 test:
   override:
-    - "true"
+    - docker build -t $IMAGE_NAME .
 deployment:
   continuous:
     branch: master
