@@ -9,6 +9,9 @@ machine:
 dependencies:
   override:
     - docker build -t $IMAGE_NAME .
+test:
+  override:
+    - "true"
 deployment:
   continuous:
     branch: master
