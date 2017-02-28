@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  connection: local
+  become: false
+
+  tasks:
+    - name: "test kops"
+      command: kops version
+      register: cmd_result
+    - debug:
+        msg: "{{ cmd_result }}"
+    - name: "assert kops version"
+      assert:
+         that:
+           - "'1.5.1' in cmd_result.stdout"
+    - name: "test kubectl"
+      command: kubectl
+      register: cmd_result
+    - debug:
+        msg: "{{ cmd_result }}"
+    - name: "assert kubectl"
+      assert:
+         that:
+           - "cmd_result.stderr != ''"
