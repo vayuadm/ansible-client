@@ -19,7 +19,7 @@ RUN \
     libffi-dev \
     tar
 RUN \
-  pip install --upgrade pip boto awscli ansible && \
+  pip install --upgrade pip boto boto3 awscli ansible && \
   rm -rf /var/cache/apk/*
 
 RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.5.3/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl && chmod u+x /usr/local/bin/kubectl
