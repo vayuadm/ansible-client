@@ -12,7 +12,7 @@
     - name: "assert kops version"
       assert:
          that:
-           - "'1.5.1' in cmd_result.stdout"
+           - "'1.5.3' in cmd_result.stdout"
     - name: "test kubectl"
       command: kubectl
       register: cmd_result
