@@ -22,8 +22,8 @@ RUN \
   pip install --upgrade pip boto boto3 awscli ansible && \
   rm -rf /var/cache/apk/*
 
-RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.5.3/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl && chmod u+x /usr/local/bin/kubectl
-RUN wget https://github.com/kubernetes/kops/releases/download/1.5.1/kops-linux-amd64 -O /usr/local/bin/kops && chmod u+x /usr/local/bin/kops
+RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.6.1/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl && chmod u+x /usr/local/bin/kubectl
+RUN wget https://github.com/kubernetes/kops/releases/download/1.5.3/kops-linux-amd64 -O /usr/local/bin/kops && chmod u+x /usr/local/bin/kops
 
 RUN mkdir /etc/ansible/ /ansible
 RUN echo "[local]" >> /etc/ansible/hosts && \
